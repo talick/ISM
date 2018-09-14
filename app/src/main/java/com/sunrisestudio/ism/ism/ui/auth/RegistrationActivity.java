@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.sunrisestudio.ism.ism.R;
+import com.sunrisestudio.ism.ism.ui.main_screen.MainActivity;
+
 public class RegistrationActivity extends AppCompatActivity {
 
     @Override
@@ -28,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void onClickConfirm(View view) {
-     //   startActivity(new Intent(this, MainActivity.class));
-       // finish();
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }

@@ -42,4 +42,20 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
+
+    <style name="AppTheme.Library" />
+    <style name="AppTheme.Library.EditTextForm">
+
+        <item name="android:background">@drawable/frame</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

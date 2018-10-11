@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".ui.splash.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,7 +22,6 @@
             android:name=".ui.auth.RegistrationActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name=".ui.main_screen.MainActivity"
             android:label="@string/title_activity_main"
@@ -34,6 +32,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.main_screen.students.StudentsActivity"
+            android:parentActivityName=".ui.main_screen.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main_screen.events.EventsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main_screen.events.EventDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main_screen.video_section.VideoActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main_screen.library.LibraryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.main_screen.application.ApplicationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.main_screen.ticket_taxi.TaxiTicketActivity" />
+        <activity android:name=".ui.splash.SplashScreenActivity2"></activity>
     </application>
 
 </manifest>

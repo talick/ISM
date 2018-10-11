@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sunrisestudio.ism.ism.R;
 import com.sunrisestudio.ism.ism.ui.auth.RegistrationActivity;
+import com.sunrisestudio.ism.ism.ui.main_screen.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
 
-                startActivity(new Intent(SplashScreenActivity.this, RegistrationActivity.class));
+                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                 finish();
             }
         }, SPLASH_DISPLAY_LENGTH);

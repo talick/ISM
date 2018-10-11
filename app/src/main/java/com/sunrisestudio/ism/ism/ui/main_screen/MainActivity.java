@@ -11,14 +11,14 @@ import android.view.MenuItem;
 
 import com.sunrisestudio.ism.ism.R;
 import com.sunrisestudio.ism.ism.ui.helper.BottomNavigationViewHelper;
+import com.sunrisestudio.ism.ism.ui.main_screen.fragments.AboutUsFragment;
+import com.sunrisestudio.ism.ism.ui.main_screen.fragments.ContactFragment;
 import com.sunrisestudio.ism.ism.ui.main_screen.fragments.MenuFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Fragment menuFragment, menuFragment2;
+    private Fragment menuFragment, aboutUsFragment, contactFragment;
 
-    private static final String BACK_STACK_ROOT_TAG = "root_fragment";
-    private static final String BACK_STACK_ROOT_TAG2 = "root_fragment2";
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -37,23 +37,35 @@ public class MainActivity extends AppCompatActivity {
                     loadFragment(menuFragment, 0);
                     return true;
                 case R.id.navigation_about_us:
-                    if (menuFragment2 == null) {
-                        menuFragment2 = new MenuFragment();
+                    if (aboutUsFragment == null) {
+                        aboutUsFragment= new AboutUsFragment();
                         Bundle bundle = new Bundle();
                         bundle.putInt("i", 1);
-                        menuFragment2.setArguments(bundle);
-                        loadFragment(menuFragment2, 1);
+                        aboutUsFragment.setArguments(bundle);
+                        loadFragment(aboutUsFragment, 1);
                         return true;
                     }
-                    loadFragment(menuFragment2, 1);
+                    loadFragment(aboutUsFragment, 1);
                     return true;
                 case R.id.navigation_ism:
-                    return true;
+
+                return true;
                 case R.id.navigation_contact:
+                    if (contactFragment == null) {
+                        contactFragment= new ContactFragment();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("i", 1);
+                        contactFragment.setArguments(bundle);
+                        loadFragment(contactFragment, 1);
+                        return true;
+                    }
+                    loadFragment(contactFragment, 1);
                     return true;
                 case R.id.navigation_profile:
 
                     return true;
+
+                    case  R.id.
             }
             return false;
         }
@@ -82,21 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.fContainer, fragment);
-
-        if (i == 0) {
-
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.popBackStack(BACK_STACK_ROOT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            transaction.addToBackStack(BACK_STACK_ROOT_TAG);
-        } else if (i == 1) {
-
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.popBackStack(BACK_STACK_ROOT_TAG2, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            transaction.addToBackStack(BACK_STACK_ROOT_TAG2);
-        }
-
         transaction.commit();
     }
 
